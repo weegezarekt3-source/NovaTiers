@@ -1,29 +1,229 @@
 
 <!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<title>Nova Tiers - Leaderboard</title>
-<link rel="stylesheet" href="css/styles.css">
-<script src="js/app.js"></script>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nova Tiers – Leaderboard</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body onload="renderLB()">
-<nav>
- <a href="index.html">Home</a>
- <a href="kits.html">Kits</a>
- <a href="leaderboard.html">Leaderboard</a>
- <a href="admin.html">Admin</a>
-</nav>
-<div class="glass">
- <h2>Global Leaderboard</h2>
- <p class="small">Sorted by total points (HT1=60, LT1=45, HT2=30, LT2=20, HT3=10, LT3=6). Retired tiers still count; empty badges mean untested kits.</p>
- <table>
-  <thead><tr><th>Player</th><th>Points</th><th>Tiers</th></tr></thead>
-  <tbody id="lb"></tbody>
- </table>
-</div>
+<body onload="">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="kits.html">Kits</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="admin.html">Admin</a>
+  </nav>
 
-<div id="profileOverlay" class="overlay" onclick="if(event.target.id==='profileOverlay')closeProfile()">
-  <div class="profile-modal" id="profileModal"></div>
-</div>
-<div id="kitPodiums"></div>
-</body></html>
+  <div class="glass">
+    <h2>Global Leaderboard</h2>
+    <p class="small">
+      Sorted by total points (RHT1=60, LT1=45, HT2=30, LT2=20, HT3=10, LT3=6).  
+      Retired tiers still count; empty badges mean untested kits.
+    </p>
+
+    <table class="leaderboard">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Points</th>
+          <th>Tiers</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- 1 -->
+        <tr>
+          <td class="name">WeeGezaRekt</td>
+          <td class="points">600</td>
+          <td class="tiers">
+            RHT1 Sword, RHT1 Crystal, RHT1 Mace, RHT1 UHC, RHT1 Axe,
+            RHT1 DiaSMP, RHT1 DiaPOT, RHT1 NethSMP, RHT1 NethPOT, RHT1 HG
+          </td>
+        </tr>
+
+        <!-- 2 -->
+        <tr>
+          <td class="name">PoppyMac3dU</td>
+          <td class="points">555</td>
+          <td class="tiers">
+            RHT1 Sword, RHT1 Crystal, RHT1 Mace, RLT1 UHC, RLT1 Axe,
+            RHT1 DiaSMP, RHT1 DiaPOT, RLT1 NethSMP, RHT1 NethPOT, RHT1 HG
+          </td>
+        </tr>
+
+        <!-- 3 -->
+        <tr>
+          <td class="name">Discodito12</td>
+          <td class="points">450</td>
+          <td class="tiers">
+            LT1 Sword, LT1 Crystal, LT1 Mace, LT1 UHC, LT1 Axe,
+            LT1 DiaSMP, LT1 DiaPOT, LT1 NethSMP, LT1 NethPOT, LT1 HG
+          </td>
+        </tr>
+
+        <!-- 4 -->
+        <tr>
+          <td class="name">T764578</td>
+          <td class="points">405</td>
+          <td class="tiers">
+            RHT1 Sword, RHT1 Crystal, RHT1 Mace, LT1 UHC, LT2 Axe,
+            HT2 DiaSMP, RHT1 DiaPOT, HT2 NethSMP, LT2 NethPOT, LT2 HG
+          </td>
+        </tr>
+
+        <!-- 5 -->
+        <tr>
+          <td class="name">Thatguy21976409</td>
+          <td class="points">365</td>
+          <td class="tiers">
+            HT2 Sword, LT2 Crystal, RHT1 Mace, HT1 UHC, LT1 Axe,
+            HT2 DiaSMP, LT2 DiaPOT, HT1 NethSMP, LT2 NethPOT, LT2 HG
+          </td>
+        </tr>
+
+        <!-- 6 -->
+        <tr>
+          <td class="name">Logi1Kenobi6775</td>
+          <td class="points">276</td>
+          <td class="tiers">
+            HT2 Sword, HT2 Crystal, LT1 Mace, HT2 UHC, HT2 Axe,
+            LT1 DiaSMP, HT2 DiaPOT, — NethSMP, HT2 NethPOT, LT3 HG
+          </td>
+        </tr>
+
+        <!-- 7 -->
+        <tr>
+          <td class="name">F Swung You</td>
+          <td class="points">245</td>
+          <td class="tiers">
+            LT2 Sword, LT2 Crystal, LT2 Mace, LT2 UHC, LT2 Axe,
+            HT2 DiaSMP, LT1 DiaPOT, LT2 NethSMP, HT2 NethPOT, LT2 HG
+          </td>
+        </tr>
+
+        <!-- 8 -->
+        <tr>
+          <td class="name">Tr1X74905</td>
+          <td class="points">180</td>
+          <td class="tiers">
+            LT2 Sword, HT3 Crystal, LT2 Mace, HT3 UHC, HT3 Axe,
+            HT2 DiaSMP, LT2 DiaPOT, HT3 NethSMP, LT2 NethPOT, HT2 HG
+          </td>
+        </tr>
+
+        <!-- 9 -->
+        <tr>
+          <td class="name">Raimis21988</td>
+          <td class="points">140</td>
+          <td class="tiers">
+            HT2 Sword, HT3 Crystal, HT2 Mace, HT3 UHC, HT3 Axe,
+            HT3 DiaSMP, HT3 DiaPOT, HT3 NethSMP, HT3 NethPOT, HT3 HG
+          </td>
+        </tr>
+
+        <!-- 10 -->
+        <tr>
+          <td class="name">Absurdfish88</td>
+          <td class="points">130</td>
+          <td class="tiers">
+            HT3 Sword, HT3 Crystal, LT2 Mace, HT3 UHC, HT3 Axe,
+            HT3 DiaSMP, HT3 DiaPOT, HT3 NethSMP, HT3 NethPOT, HT2 HG
+          </td>
+        </tr>
+
+        <!-- 11 -->
+        <tr>
+          <td class="name">OzBAMBAMzO</td>
+          <td class="points">121</td>
+          <td class="tiers">
+            — Sword, HT2 Crystal, LT3 Mace, — UHC, HT3 Axe,
+            — DiaSMP, LT1 DiaPOT, — NethSMP, — NethPOT, HT2 HG
+          </td>
+        </tr>
+
+        <!-- 12 -->
+        <tr>
+          <td class="name">ImTh3Guest</td>
+          <td class="points">100</td>
+          <td class="tiers">
+            HT2 Sword, HT3 Crystal, — Mace, HT2 UHC, HT2 Axe,
+            — DiaSMP, — DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 13 -->
+        <tr>
+          <td class="name">thefraglegz0</td>
+          <td class="points">62</td>
+          <td class="tiers">
+            LT3 Sword, LT3 Crystal, LT3 Mace, LT3 UHC, LT3 Axe,
+            HT3 DiaSMP, LT3 DiaPOT, HT3 NethSMP, LT3 NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 14 -->
+        <tr>
+          <td class="name">QD BY LIRRY</td>
+          <td class="points">60</td>
+          <td class="tiers">
+            — Sword, HT2 Crystal, — Mace, — UHC, — Axe,
+            HT2 DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 15 -->
+        <tr>
+          <td class="name">Stormy</td>
+          <td class="points">54</td>
+          <td class="tiers">
+            LT3 Sword, LT3 Crystal, LT3 Mace, LT3 UHC, LT3 Axe,
+            LT3 DiaSMP, LT3 DiaPOT, LT3 NethSMP, LT3 NethPOT, LT3 HG
+          </td>
+        </tr>
+
+        <!-- 16 -->
+        <tr>
+          <td class="name">Mater112940</td>
+          <td class="points">50</td>
+          <td class="tiers">
+            — Sword, HT3 Crystal, HT3 Mace, HT3 UHC, LT2 Axe,
+            — DiaSMP, — DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 17 -->
+        <tr>
+          <td class="name">REDRUINKING</td>
+          <td class="points">40</td>
+          <td class="tiers">
+            — Sword, HT2 Crystal, — Mace, — UHC, — Axe,
+            — DiaSMP, — DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 18 -->
+        <tr>
+          <td class="name">OsianXFinley</td>
+          <td class="points">30</td>
+          <td class="tiers">
+            — Sword, — Crystal, LT2 Mace, — UHC, — Axe,
+            — DiaSMP, — DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+        <!-- 19 -->
+        <tr>
+          <td class="name">Xdlunercitty</td>
+          <td class="points">20</td>
+          <td class="tiers">
+            — Sword, — Crystal, — Mace, — UHC, — Axe,
+            — DiaSMP, — DiaPOT, — NethSMP, — NethPOT, — HG
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
