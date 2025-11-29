@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>Nova Tiers - Admin</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js"></script>
+</head>
+<body onload="checkOwnerAdminAuth()">
+<div id="adminContent" style="display:none;">
+<nav>
+ <a href="index.html">Home</a>
+ <a href="kits.html">Kits</a>
+ <a href="leaderboard.html">Leaderboard</a>
+ <a href="admin.html">Admin</a>
+</nav>
+<div class="glass">
+ <h2>Retired Players</h2>
+ <div id="adminBox"></div>
+</div>
+
+<div class="glass">
+ <h2>Player Avatars (Bedrock)</h2>
+ <p class="small">Paste a direct image URL of their skin (Bedrock head). This can be any hosted image link.</p>
+ <input id="avatarName" placeholder="Player name">
+ <input id="avatarUrl" placeholder="Avatar image URL (https://...)">
+ <button onclick="setAvatar()">Save Avatar</button>
+ <div id="avatarList" style="margin-top:10px;"></div>
+</div>
+
+<div class="glass">
+ <h2>Danger Zone</h2>
+ <button onclick="localStorage.removeItem('nova_v4_final');alert('All Nova v4 data cleared');">Reset All Data</button>
+</div>
+
+</div>
+
+<div id="profileOverlay" class="overlay" onclick="if(event.target.id==='profileOverlay')closeProfile()">
+  <div class="profile-modal" id="profileModal"></div>
+</div>
+<script>
+  function checkOwnerAdminAuth(){
+    const ok = localStorage.getItem('nova_owner_ok');
+    const content = document.getElementById('adminContent');
+    if(!content) return;
+    if(ok === 'yes'){
+      content.style.display = 'block';
+      renderAdmin();
+      return;
+    }
+    const input = prompt('Enter owner password:');
+    // CHANGE THIS TO YOUR OWN PASSWORD
+    if(input === 'NovaOwnerOnly'){
+      localStorage.setItem('nova_owner_ok','yes');
+      content.style.display = 'block';
+      renderAdmin();
+    }else{
+      content.innerHTML = "<div class='glass'><h2>Admin locked</h2><p class='small'>Incorrect password.</p></div>";
+      content.style.display = 'block';
+    }
+  }
+</script>
+
+</body></html>
