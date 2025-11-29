@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>Nova Tiers - Kits</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js"></script>
+</head>
+<body onload="renderKit('Sword');checkOwnerAuth()">
+<nav>
+ <a href="index.html">Home</a>
+ <a href="kits.html">Kits</a>
+ <a href="leaderboard.html">Leaderboard</a>
+ <a href="admin.html">Admin</a>
+</nav>
+<div class="tabbar"><div class='tab' id='tab_Sword' onclick="renderKit('Sword')">Sword</div><div class='tab' id='tab_Crystal' onclick="renderKit('Crystal')">Crystal</div><div class='tab' id='tab_Mace' onclick="renderKit('Mace')">Mace</div><div class='tab' id='tab_UHC' onclick="renderKit('UHC')">UHC</div><div class='tab' id='tab_Axe' onclick="renderKit('Axe')">Axe</div><div class='tab' id='tab_DiaSMP' onclick="renderKit('DiaSMP')">DiaSMP</div><div class='tab' id='tab_DiaPOT' onclick="renderKit('DiaPOT')">DiaPOT</div><div class='tab' id='tab_NethSMP' onclick="renderKit('NethSMP')">NethSMP</div><div class='tab' id='tab_NethPOT' onclick="renderKit('NethPOT')">NethPOT</div><div class='tab' id='tab_HG' onclick="renderKit('HG')">HG</div></div>
+<div id="kitView"></div>
+<div id="editPanel" style="display:none;">
+<div class="glass">
+ <h3>Add / Update Player</h3>
+ <input id="name" placeholder="Player">
+ <select id="kitSel"><option>Sword</option><option>Crystal</option><option>Mace</option><option>UHC</option><option>Axe</option><option>DiaSMP</option><option>DiaPOT</option><option>NethSMP</option><option>NethPOT</option><option>HG</option></select>
+ <select id="tier"><option>HT1</option><option>LT1</option><option>HT2</option><option>LT2</option><option>HT3</option><option>LT3</option></select>
+ <button onclick="addPlayer(document.getElementById('kitSel').value,document.getElementById('name').value,document.getElementById('tier').value)">Save</button>
+</div>
+</div>
+
+<div id="profileOverlay" class="overlay" onclick="if(event.target.id==='profileOverlay')closeProfile()">
+  <div class="profile-modal" id="profileModal"></div>
+</div>
+<script>
+  function checkOwnerAuth(){
+    const panel = document.getElementById('editPanel');
+    if(!panel) return;
+    const ok = localStorage.getItem('nova_owner_ok');
+    if(ok === 'yes'){
+      panel.style.display = 'block';
+      return;
+    }
+    const input = prompt('Enter owner password to edit tiers:');
+    // CHANGE THIS TO YOUR OWN PASSWORD
+    if(input === 'NovaOwnerOnly'){
+      localStorage.setItem('nova_owner_ok','yes');
+      panel.style.display = 'block';
+    } else {
+      panel.style.display = 'none';
+      alert('Editing locked.');
+    }
+  }
+</script>
+
+</body></html>

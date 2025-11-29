@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>Nova Tiers - Leaderboard</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js"></script>
+</head>
+<body onload="renderLB()">
+<nav>
+ <a href="index.html">Home</a>
+ <a href="kits.html">Kits</a>
+ <a href="leaderboard.html">Leaderboard</a>
+ <a href="admin.html">Admin</a>
+</nav>
+<div class="glass">
+ <h2>Global Leaderboard</h2>
+ <p class="small">Sorted by total points (HT1=60, LT1=45, HT2=30, LT2=20, HT3=10, LT3=6). Retired tiers still count; empty badges mean untested kits.</p>
+ <table>
+  <thead><tr><th>Player</th><th>Points</th><th>Tiers</th></tr></thead>
+  <tbody id="lb"></tbody>
+ </table>
+</div>
+
+<div id="profileOverlay" class="overlay" onclick="if(event.target.id==='profileOverlay')closeProfile()">
+  <div class="profile-modal" id="profileModal"></div>
+</div>
+<div id="kitPodiums"></div>
+</body></html>
